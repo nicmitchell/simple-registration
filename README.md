@@ -1,7 +1,15 @@
-`npm install`
+###Requirements
+NPM
 
-`bower install`
+Bower
 
-`composer install`
+Composer
 
-`grunt`
+###Installation
+`grunt install` will install NPM, Bower, and Composer dependencies
+
+###Usage
+
+`grunt start` will run the php server
+
+`grunt` will trigger `watch` and `livereload`
