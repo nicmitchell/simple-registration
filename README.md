@@ -1,7 +1,7 @@
-`npm install
+`npm install`
 
-`bower install
+`bower install`
 
-`composer install
+`composer install`
 
-`grunt
+`grunt`
