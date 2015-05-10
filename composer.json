@@ -1,0 +1,13 @@
+{
+    "name": "roidna",
+    "authors": [
+        {
+            "name": "Nic Mitchell",
+            "email": "nic@nicmitchell.com"
+        }
+    ],
+    "require": {
+        "rickysu/php-livereload": "dev-master",
+        "phpunit/phpunit": "4.6.*"
+    }
+}
