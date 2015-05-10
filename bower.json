@@ -13,8 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "grunt": "~0.4.5",
     "foundation": "~5.5.2",
-    "grunt-contrib-watch": "~0.6.1"
-  }
+    "animate.css": "~3.2.6"
+  },
+  "devDependencies": {}
 }
