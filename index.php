@@ -19,21 +19,32 @@
     <div class="row">
       <section class="main small-6 small-centered columns">
         <img class="animated fadeInDown logo" src="http://www.roidna.com/wordpress/wp-content/themes/roidna/imgs/logo-white.svg">
-        <form data-abide class="animated bounceInUp">
+        <form data-abide class="animated bounceInUp" action="register.php" method="post">
           <fieldset>
             <legend>Registration</legend>
-            
             <div class="name-field animated flipInX">
-              <label>Your name <small>required</small>
-                <input type="text" required pattern="[a-zA-Z]+">
-              </label>
-              <small class="error animated rubberBand ">Name is required and must be a string.</small>
-            </div>
+                <label>Your name <small>required</small>
+                  <input type="text" placeholder="Jane Doe" name="username" required pattern="^[a-zA-Z_\-]+$">
+                </label>
+                <small class="error">Username cannot contain spaces, numbers, or special characters</small>
+              </div>
             <div class="email-field animated flipInX">
-              <label>Email <small>required</small>
-                <input type="email" required>
+              <label>Email
+                <input type="email" placeholder="name@domain.com" name="email" required>
               </label>
               <small class="error animated rubberBand">An email address is required.</small>
+            </div>
+            <div class="password-field animated flipInX">
+              <label>Password
+                <input type="password" pattern="alpha_numeric" placeholder="LittleW0men." name="password" required>
+              </label>
+              <small class="error animated rubberBand">Your password must be alphanumeric with no special characters.</small>
+            </div>
+            <div class="confirm-password-field animated flipInX">
+              <label>Confirm Password
+                <input type="password" placeholder="LittleW0men." name="confirm-password" required data-equalto="password">
+              </label>
+              <small class="error animated rubberBand">Passwords must match.</small>
             </div>
             <button type="submit" class="register animated bounceIn">Register</button>
             <button type="submit" class="reset animated bounceIn">Reset Password</button>

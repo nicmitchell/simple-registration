@@ -24,17 +24,20 @@ module.exports = function(grunt) {
         }
       }
     },
-    install: {
-      command: [
-        'npm install',
-        'bower install',
-        'php composer.phar install',
-        'cp -r ./vendor/opauth/facebook ./vendor/opauth/opauth/lib/Opauth/Strategy/facebook',
-        'cp -r ./vendor/opauth/twitter ./vendor/opauth/opauth/lib/Opauth/Strategy/twitter'
-      ].join('&&')
-    },
-    start: {
-      command: 'php -S localhost:8000'
+    shell: {
+      install: {
+        command: [
+          'npm install',
+          'bower install',
+          'php composer.phar install',
+          'cp -r ./vendor/opauth/facebook ./vendor/opauth/opauth/lib/Opauth/Strategy/facebook',
+          'cp -r ./vendor/opauth/twitter ./vendor/opauth/opauth/lib/Opauth/Strategy/twitter',
+          'cp -r ./vendor/opauth/opauth/lib/Opauth ./auth'
+        ].join('&&')
+      },
+      start: {
+        command: 'php -S localhost:8000'
+      }
     }
   });
 
@@ -42,7 +45,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['watch']);
 
     // Shell tasks
-    grunt.registerTask('install', ['install']);
+    grunt.registerTask('shell', ['shell']);
 
     // Load up tasks
     grunt.loadNpmTasks('grunt-contrib-watch');
