@@ -1,6 +1,5 @@
 <?php
 define('CONF_FILE', dirname(dirname(__FILE__)).'/'.'opauth.conf.php');
-// define('OPAUTH_LIB_DIR', dirname(__FILE__).'/'.'Opauth/');
 define('OPAUTH_LIB_DIR', dirname(__FILE__).'/lib/Opauth/');
 
 /**

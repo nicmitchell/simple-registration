@@ -14,7 +14,7 @@
 .logo {
   background: #333;
   padding: 0 4rem;
-  margin: 5rem 0 1.2rem 0;
+  margin: 1.2rem 0;
 }
 
 /* Custom Animations */
@@ -80,4 +80,8 @@ img.logo {
   -moz-animation-delay: 2s;
   animation-duration: 1s;
   animation-delay: 2s;
+}
+
+form#reset {
+  display: none;
 }

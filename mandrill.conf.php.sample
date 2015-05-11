@@ -1,1 +1,8 @@
-<?php define('MANDRILL_API_KEY', 'PUT_YOUR_MANDRILL_API_KEY_HERE'); ?>
+<?php 
+// Mandrill API KEY
+define('MANDRILL_API_KEY', 'PUT_YOUR_MANDRILL_API_KEY_HERE');
+
+// Mandrill library
+require(dirname(__FILE__). '/vendor/mandrill/mandrill/src/Mandrill.php');
+
+?>
