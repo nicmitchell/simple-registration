@@ -36,13 +36,13 @@
             </div>
             <div class="password-field animated flipInX">
               <label>Password
-                <input type="password" pattern="alpha_numeric" placeholder="LittleW0men." name="password" required>
+                <input type="password" pattern="alpha_numeric" placeholder="LittleWomen" name="password" required>
               </label>
               <small class="error animated rubberBand">Your password must be alphanumeric with no special characters.</small>
             </div>
             <div class="confirm-password-field animated flipInX">
               <label>Confirm Password
-                <input type="password" placeholder="LittleW0men." name="confirm-password" required data-equalto="password">
+                <input type="password" placeholder="LittleWomen." name="confirm-password" required data-equalto="password">
               </label>
               <small class="error animated rubberBand">Passwords must match.</small>
             </div>

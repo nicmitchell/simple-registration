@@ -17,6 +17,8 @@
   margin: 5rem 0 1.2rem 0;
 }
 
+/* Custom Animations */
+
 button.register {
   -webkit-animation-duration: 3s;
   -webkit-animation-delay: 1.5s;
@@ -37,6 +39,24 @@ button.reset {
 
 div.name-field {
   -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1s;
+  animation-duration: 1s;
+  animation-delay: .5s;
+}
+
+div.email-field {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .75s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .75s;
+  animation-duration: 1s;
+  animation-delay: .75s;
+}
+
+div.password-field {
+  -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1s;
   -moz-animation-duration: 1s;
   -moz-animation-delay: 1s;
@@ -44,7 +64,7 @@ div.name-field {
   animation-delay: 1s;
 }
 
-div.email-field {
+div.confirm-password-field {
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1.25s;
   -moz-animation-duration: 1s;
