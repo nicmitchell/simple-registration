@@ -1,0 +1,8 @@
+<?php
+require(dirname(__FILE__). '/vendor/ktamas77/firebase-php/src/firebaseInterface.php');
+require(dirname(__FILE__). '/vendor/ktamas77/firebase-php/src/firebaseLib.php');
+
+const DEFAULT_URL = 'YOUR_FIREBASE_URL';
+const DEFAULT_TOKEN = 'YOUR_FIREBASE_API_KEY';
+
+$firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
