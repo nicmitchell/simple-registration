@@ -3,3 +3,5 @@
 /vendor/
 /example/
 opauth.conf.php
+mandrilll.conf.php
+firebase.conf.php
