@@ -1,7 +1,5 @@
 <?php require(dirname(__FILE__). '/header.php'); ?>
 
-// if post is set, send vars to JS => register user
-
         <div class="alert">
           <small class="alert-box success"></small>
           <small class="alert-box error animated rubberBand"></small>
@@ -34,9 +32,13 @@
               </label>
               <small class="error animated rubberBand">Passwords must match.</small>
             </div>
-            <button type="button" class="register animated bounceIn">Register</button>
-            <a href="reset.php" id="reset-link"><button type="button" class="reset animated bounceIn">Reset Password</button></a>
+            <div class="small-centered columns">
+              <button type="button" class="register animated bounceIn">Register</button>
+              <a href="/reset.php"><button type="button" class="facebook animated bounceIn">Facebook</button></a>
+              <a href="/reset.php"><button type="button" class="twitter animated bounceIn">Twitter</button></a>
+            </div>
           </fieldset>
         </form>
+        <div class="reset-link animated fadeInDown"><a href="/reset.php">Reset Password</a></div>
         <!-- End Registration Form-->
 <?php require(dirname(__FILE__). '/footer.php'); ?>

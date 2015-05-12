@@ -27,7 +27,7 @@
 
 /* Custom Animations */
 
-button.register {
+button.register, button.reset {
   -webkit-animation-duration: 3s;
   -webkit-animation-delay: 1.5s;
   -moz-animation-duration: 3s;
@@ -36,13 +36,22 @@ button.register {
   animation-delay: 1.5s;
 }
 
-button.reset {
+button.facebook{
   -webkit-animation-duration: 3s;
-  -webkit-animation-delay: 2s;
+  -webkit-animation-delay: 1.75s;
   -moz-animation-duration: 3s;
-  -moz-animation-delay: 2s;
+  -moz-animation-delay: 1.75s;
   animation-duration: 3s;
-  animation-delay: 2s;
+  animation-delay: 1.75s;
+}
+
+button.twitter{
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 2.1s;
+  -moz-animation-duration: 3s;
+  -moz-animation-delay: 2.1s;
+  animation-duration: 3s;
+  animation-delay: 2.1s;
 }
 
 div.name-field {
@@ -79,6 +88,17 @@ div.confirm-password-field {
   -moz-animation-delay: 1.25s;
   animation-duration: 1s;
   animation-delay: 1.25s;
+}
+
+.reset-link {
+  text-align: center;
+  margin-top: 1rem;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 2.1s;
+  -moz-animation-duration: 2s;
+  -moz-animation-delay: 2.1s;
+  animation-duration: 2s;
+  animation-delay: 2.1s;
 }
 
 img.logo {
