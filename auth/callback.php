@@ -78,20 +78,38 @@ else{
   } elseif (!$Opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
     $message = '<strong style="color: red;">Invalid auth response: </strong>'.$reason.".<br>\n";
   } else {
-    $message = '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n";
+    // $message = '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n";
 
     /**
      * It's all good. Go ahead with your application-specific authentication logic
      */
     $data = array(
       'username' => $response['auth']['uid'],
-      'email' => $response['auth']['info']['email']
+      'email' => $response['auth']['info']['email'],
+      'password' => $response['auth']['info']['email'] // omg this is totally not a good idea
     );
 
-    register_user($data);
-    
+    // Check for a user conflict
+    $conflict = user_conflict($data);
+
+    // found a conflict
+    if (!empty($conflict)){
+      echo '<small class="alert-box error animated rubberBand">' . $conflict . '</small>';
+    }
+
+    // no conflict, register user
+    $user = register_user($data);
+
+    // if user was created, send Mandrill email
+    if(!empty($user)){
+      send_email($data);
+      echo '<small class="alert-box success">Your account has been created</small>';
+    } 
+
+    // user was not successfully created
+    echo '<small class="alert-box error animated rubberBand">Something went wrong</small>';
+
   }
-  return $message;
 }
 
 

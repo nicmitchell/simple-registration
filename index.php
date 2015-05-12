@@ -1,5 +1,7 @@
 <?php require(dirname(__FILE__). '/header.php'); ?>
 
+// if post is set, send vars to JS => register user
+
         <div class="alert">
           <small class="alert-box success"></small>
           <small class="alert-box error animated rubberBand"></small>
