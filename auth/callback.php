@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Callback for Opauth
  * 
@@ -55,15 +55,18 @@ switch($Opauth->env['callback_transport']) {
     $response = unserialize(base64_decode( $_GET['opauth'] ));
     break;
   default:
-    $message = '<strong style="color: red;">Error: </strong>Unsupported callback_transport.'."<br>\n";
+    echo '<small class="alert-box error animated rubberBand" style="display:block">Error: Unsupported callback_transport.</small>';
     break;
 }
+
+require(dirname(dirname(__FILE__)). '/header.php');
 
 /**
  * Check if it's an error callback
  */
 if (array_key_exists('error', $response)) {
-  $message = '<strong style="color: red;">Authentication error: </strong> Opauth returns error auth response.'."<br>\n";
+  // user was not successfully created
+  echo '<small class="alert-box error animated rubberBand" style="display:block">Something went wrong</small>';
 }
 
 /**
@@ -78,7 +81,7 @@ else{
   } elseif (!$Opauth->validate(sha1(print_r($response['auth'], true)), $response['timestamp'], $response['signature'], $reason)) {
     $message = '<strong style="color: red;">Invalid auth response: </strong>'.$reason.".<br>\n";
   } else {
-    // $message = '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n";
+    $message = '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n";
 
     /**
      * It's all good. Go ahead with your application-specific authentication logic
@@ -94,21 +97,17 @@ else{
 
     // found a conflict
     if (!empty($conflict)){
-      echo '<small class="alert-box error animated rubberBand">' . $conflict . '</small>';
+      echo '<small class="alert-box error animated rubberBand" style="display:block">' . $conflict . '</small>';
     }
 
     // no conflict, register user
-    $user = register_user($data);
-
-    // if user was created, send Mandrill email
-    if(!empty($user)){
-      send_email($data);
-      echo '<small class="alert-box success">Your account has been created</small>';
-    } 
-
-    // user was not successfully created
-    echo '<small class="alert-box error animated rubberBand">Something went wrong</small>';
-
+    if (empty($conflict)){
+	$user = register_user($data);
+	  if(!empty($user)){
+	    send_email($data); // if user was created, send Mandrill email
+	    echo '<small class="alert-box success" style="display:block">Your account has been created</small>';
+	  } 
+    }
   }
 }
 

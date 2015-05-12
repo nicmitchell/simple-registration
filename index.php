@@ -34,8 +34,8 @@
             </div>
             <div class="small-centered columns">
               <button type="button" class="register animated bounceIn">Register</button>
-              <a href="/reset.php"><button type="button" class="facebook animated bounceIn">Facebook</button></a>
-              <a href="/reset.php"><button type="button" class="twitter animated bounceIn">Twitter</button></a>
+              <a href="/auth/facebook"><button type="button" class="facebook animated bounceIn">Facebook</button></a>
+              <a href="/auth/twitter"><button type="button" class="twitter animated bounceIn">Twitter</button></a>
             </div>
           </fieldset>
         </form>
