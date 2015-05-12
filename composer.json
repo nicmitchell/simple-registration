@@ -7,9 +7,7 @@
         }
     ],
     "require": {
-        "rickysu/php-livereload": "dev-master",
         "phpunit/phpunit": "4.6.*",
-        "bshaffer/oauth2-server-php": "~1.7",
         "opauth/opauth": "^0.4.4",
         "opauth/facebook": "^0.2.1",
         "opauth/twitter": "^0.3.1",
