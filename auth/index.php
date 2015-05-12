@@ -18,6 +18,5 @@ require CONF_FILE;
  */
 require OPAUTH_LIB_DIR.'Opauth.php';
 
-// var_dump($config);
 $Opauth = new Opauth( $config );
 

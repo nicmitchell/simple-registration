@@ -1,5 +1,9 @@
 <?php require(dirname(__FILE__). '/header.php'); ?>
-
+        
+        <div class="alert">
+          <small class="alert-box success"></small>
+          <small class="alert-box error animated rubberBand"></small>
+        </div>
         <!-- Start Reset Password Form-->
         <form data-abide class="animated bounceInUp" action="reset.php" method="post" id="reset">
           <fieldset>
@@ -18,11 +22,11 @@
             </div>
             <div class="confirm-password-field animated flipInX">
               <label>New Password
-                <input type="password" placeholder="BigWomen" name="confirm-password" name="new-password" required>
+                <input type="password" pattern="alpha_numeric" placeholder="BigWomen" name="new-password" required>
               </label>
               <small class="error animated rubberBand">Your password must be alphanumeric with no special characters.</small>
             </div>
-            <button class="reset animated bounceIn">Reset</button>
+            <button type="button" class="reset animated bounceIn">Reset</button>
           </fieldset>
         </form>
         <!-- End Reset Password Form-->
