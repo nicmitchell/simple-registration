@@ -1,6 +1,6 @@
 <?php 
 
-  require_once(dirname(__FILE__) .'/vendor/ircmaxell/password-compat/lib/password.php');
+  require_once(dirname(dirname(__FILE__)) .'/vendor/ircmaxell/password-compat/lib/password.php');
   require_once(dirname(__FILE__). '/mandrill.conf.php');
   require_once(dirname(__FILE__). '/firebase.conf.php');
   require_once(dirname(__FILE__). '/functions.php');
@@ -9,10 +9,10 @@
 <!DOCTYPE html>
   <head>  
     <title>Please Register for ROI-DNA</title>
-    <link rel="stylesheet" href="/bower_components/foundation/css/foundation.min.css">
-    <link rel="stylesheet" href="/bower_components/foundation/css/normalize.min.css">
-    <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
+    <link rel="stylesheet" href="../bower_components/foundation/css/normalize.min.css">
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
   <body>
     <header>
