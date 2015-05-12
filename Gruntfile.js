@@ -6,19 +6,25 @@ module.exports = function(grunt) {
     // Livereload is setup for the 35729 port by default
     watch: {
       css: {
-        files: ['css/*.css'],
+        files: ['/css/*.css'],
         options: {
           livereload: 35729
         }
       },
       js: {
-        files: ['js/*.js'],
+        files: ['/js/*.js'],
         options: {
           livereload: 35729
         }
       },
       php: {
         files: ['*.php'],
+        options: {
+          livereload: 35729
+        }
+      },
+      tests: {
+        files: ['/tests/tests.php'],
         options: {
           livereload: 35729
         }
@@ -42,7 +48,7 @@ module.exports = function(grunt) {
   });
 
     // Default task
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['watch', 'tests']);
 
     // Shell tasks
     grunt.registerTask('shell', ['shell']);
@@ -51,3 +57,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
 };
+

@@ -1,6 +1,8 @@
 <?php
 
-// Checks to see if a user already exists
+/**
+* Checks to see if a user already exists
+*/
 function user_conflict($data) {
 
   $firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL, FIREBASE_DEFAULT_TOKEN);  
@@ -23,7 +25,10 @@ function user_conflict($data) {
   return false;
 }
 
-// Registers user and inserts into Firebase
+
+/**
+* Registers user and inserts into Firebase
+*/
 function register_user($data) {
 
   // create register date
@@ -53,7 +58,10 @@ function register_user($data) {
   return false;
 }
 
-// Send email to user via Mandrill after registration
+
+/**
+* Send email to user via Mandrill after registration
+*/
 function send_email($data){
   try {
   $mandrill = new Mandrill(MANDRILL_API_KEY);
@@ -95,7 +103,10 @@ function send_email($data){
   }
 }
 
-// Reset a user's password
+
+/**
+* Reset a user's password
+*/
 function reset_password($data) {
 
   $firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL, FIREBASE_DEFAULT_TOKEN);  
@@ -107,7 +118,8 @@ function reset_password($data) {
       // found the user
       if ($value['username'] === $data['username']) {
         // Verify passwords match
-        $password_hash = password_hash($data['current-password'], PASSWORD_BCRYPT);
+        // $password_hash = password_hash($data['current-password'], PASSWORD_BCRYPT);
+
         if (password_verify($data['current-password'], $value['password'])) {
           $password_hash = password_hash($data['new-password'], PASSWORD_BCRYPT);
           $firebase->set($key . '/password', $password_hash);
