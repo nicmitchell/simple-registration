@@ -110,7 +110,7 @@ function reset_password($data) {
         $password_hash = password_hash($data['current-password'], PASSWORD_BCRYPT);
         if (password_verify($data['current-password'], $value['password'])) {
           $password_hash = password_hash($data['new-password'], PASSWORD_BCRYPT);
-          $firebase->set($key . '/' . $value . '/password', $password_hash);
+          $firebase->set($key . '/password', $password_hash);
           return true;
         }
       }
