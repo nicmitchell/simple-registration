@@ -3,7 +3,7 @@
 // Checks to see if a user already exists
 function user_conflict($data) {
 
-  $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);  
+  $firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL, FIREBASE_DEFAULT_TOKEN);  
   $results = json_decode($firebase->get('/'), true);
 
   if(count($results) > 0){
@@ -42,7 +42,7 @@ function register_user($data) {
   );
 
   // Store the user data in Firebase
-  $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+  $firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL, FIREBASE_DEFAULT_TOKEN);
   $key = json_decode($firebase->push('/', $user_data), true);
 
   // make sure it was saved
@@ -98,7 +98,7 @@ function send_email($data){
 // Reset a user's password
 function reset_password($data) {
 
-  $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);  
+  $firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL, FIREBASE_DEFAULT_TOKEN);  
   $results = json_decode($firebase->get('/'), true);
 
   if(count($results) > 0) {

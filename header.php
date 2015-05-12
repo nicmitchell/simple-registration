@@ -1,9 +1,9 @@
 <?php 
 
-  require(dirname(__FILE__) .'/vendor/ircmaxell/password-compat/lib/password.php');
-  require(dirname(__FILE__). '/mandrill.conf.php');
-  require(dirname(__FILE__). '/firebase.conf.php');
-  require(dirname(__FILE__). '/functions.php');
+  require_once(dirname(__FILE__) .'/vendor/ircmaxell/password-compat/lib/password.php');
+  require_once(dirname(__FILE__). '/mandrill.conf.php');
+  require_once(dirname(__FILE__). '/firebase.conf.php');
+  require_once(dirname(__FILE__). '/functions.php');
   
 ?>
 <!DOCTYPE html>
