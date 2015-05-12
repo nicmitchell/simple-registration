@@ -1,9 +1,5 @@
 <?php
 
-require(dirname(__FILE__) .'/vendor/ircmaxell/password-compat/lib/password.php');
-require(dirname(__FILE__). '/mandrill.conf.php');
-require(dirname(__FILE__). '/firebase.conf.php');
-
 // Checks to see if a user already exists
 function user_conflict($data) {
   // data should be $_POST vars
@@ -14,20 +10,19 @@ function user_conflict($data) {
 
   // username conflict
   if ($username !== 'null') {
-    $result = $username;
-    // echo 'There is already a user registered with that username';
+    $result = 'There is already a user registered with that username';
 
   // email conflict
   } elseif ($email !== 'null') {
-    $result = $email;
-    // echo 'There is already a user registered with that email';
+    // Doesn't currenlty work. Have to iterate through all users to check each email
+    $result = 'There is already a user registered with that email';
     
   // no user or email conflicts
   } else {
     $result = false;
   }
-  
-  return result;
+
+  return $result;
 }
 
 // Registers user and inserts into Firebase
@@ -42,7 +37,7 @@ function register_user($data) {
   $password_hash = password_hash($password_raw, PASSWORD_BCRYPT);
 
   // create register date
-  date_default_timezone_set('America/Los_Angeles');
+  
   $dateTime = new DateTime();
 
   // make a user array
