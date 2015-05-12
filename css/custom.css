@@ -17,6 +17,14 @@
   margin: 1.2rem 0;
 }
 
+.alert-box.error{
+  border: none;
+}
+
+.alert-box, .alert-box.error {
+  display: none;
+}
+
 /* Custom Animations */
 
 button.register {

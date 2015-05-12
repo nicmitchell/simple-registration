@@ -1,34 +1,9 @@
 <?php require(dirname(__FILE__). '/header.php'); ?>
 
-<?php 
-  if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['email'])){
-    
-    // Check for a user conflict
-    $conflict = user_conflict($_POST);
-
-    if (!empty($conflict)){
-      // found a conflict
-      echo '<small class="error">'.$conflict.'</small>';
-    } else {
-      // no conflict, register user
-      $user = register_user($data);
-    }
-
-    // if user was created
-    if(!empty($user)){
-      // send Mandrill email
-      // send_email($user);
-
-      // update the view
-      echo '<small class="alert-box success">Your account has been created</small>';
-
-    } else {
-      // user was not successfully created
-      // update the view
-    }
-  }
-?>
-
+        <div class="alert">
+          <small class="alert-box success"></small>
+          <small class="alert-box error animated rubberBand"></small>
+        </div>
         <!-- Start Registration Form-->
         <form data-abide class="animated bounceInUp" action="" method="post" id="register">
           <fieldset>
@@ -53,11 +28,11 @@
             </div>
             <div class="confirm-password-field animated flipInX">
               <label>Confirm Password
-                <input type="password" placeholder="LittleWomen" name="confirm-password" required data-equalto="password">
+                <input type="password" pattern="alpha_numeric" placeholder="LittleWomen" name="confirm-password" data-equalto="password" required>
               </label>
               <small class="error animated rubberBand">Passwords must match.</small>
             </div>
-            <button type="submit" class="register animated bounceIn">Register</button>
+            <button type="button" class="register animated bounceIn">Register</button>
             <a href="reset.php" id="reset-link"><button type="button" class="reset animated bounceIn">Reset Password</button></a>
           </fieldset>
         </form>

@@ -6,13 +6,13 @@ module.exports = function(grunt) {
     // Livereload is setup for the 35729 port by default
     watch: {
       css: {
-        files: ['css/**/*.css'],
+        files: ['css/*.css'],
         options: {
           livereload: 35729
         }
       },
       js: {
-        files: ['js/**/*.js'],
+        files: ['js/*.js'],
         options: {
           livereload: 35729
         }
