@@ -16,6 +16,4 @@ Composer
 `grunt` will trigger `watch` and `livereload`
 
 ###Configuration
-Follow instructions to create an app for:
-Facebook(https://github.com/opauth/facebook)[https://github.com/opauth/facebook]
-and Twitter(https://github.com/opauth/twitter)[https://github.com/opauth/twitter]
+Follow instructions to create an app for [Facebook](https://github.com/opauth/facebook) and [Twitter](https://github.com/opauth/twitter)
